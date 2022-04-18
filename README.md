@@ -1,24 +1,4 @@
 # compoundapp
-
-## Project setup
 ```
-npm install
+Calculate compound interest and display the daily interest on a given format.
 ```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
