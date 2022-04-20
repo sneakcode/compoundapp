@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
-import InputScreen from  "../views/InputScreen.vue";
+import HomeScreen from  "../views/HomeScreen.vue";
 
 const routes = [
   {
     path: "/",
-    name: "input",
-    component: InputScreen,
+    name: "home",
+    component: HomeScreen,
   }
 ];
 

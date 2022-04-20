@@ -1,5 +1,5 @@
 <template>
-    <form class="compound-interest-form" @submit.prevent="calculateCompoundInterest">
+    <form class="compound-interest-form" @submit.prevent="submittedForm">
 
         <div class="input">
             <label for="">Interest Rate</label>
@@ -32,37 +32,20 @@ export default {
             }
         },
         methods: {
-            calculateCompoundInterest() {
-                let data = {}
-                data['totalCompoundInterest'] = this.compoundInterest(this.duration, this.rate, this.capital)
-                data['dailyCompoundInterest'] = this.dailyCompoundInterest(this.duration, this.rate, this.capital)
-
-                this.$emit('calculated-compound-interest', data)
-
-            },
-            compoundInterest(days, rate, capital) {
-                let compound = capital
-                let rateInterest = rate/100
-                for(let i = 1; i <= days; i++){
-                    compound += (compound * rateInterest)
+            submittedForm() {
+                let data = {
+                    rate: this.rate,
+                    duration: this.duration,
+                    capital: this.capital,
                 }
-                return compound
-            },
-            dailyCompoundInterest(days, rate, capital) {
-                let daily = []
-                let compound = capital
-                let rateInterest = rate/100
-                for(let i = 1; i <= days; i++){
-                    
-                    daily.push({
-                        day:i,
-                        principal:compound,
-                        rate:rateInterest,
-                        newPrincipal: compound += (compound * rateInterest)
-                    })
-                }
+
+                this.$emit('compound-interest-form-submitted', data)
+
+                this.rate = ''
+                this.duration = ''
+                this.capital = ''
             }
-        },
+        }
     }
 </script>
 
