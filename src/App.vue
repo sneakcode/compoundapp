@@ -1,12 +1,20 @@
 <template>
-  <nav>
+  <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </nav>
+  </nav> -->
   <router-view />
 </template>
 
-<style>
+<style lang="scss">
+*, ::before, ::after {
+  box-sizing: border-box;
+} 
+
+@mixin forLargeScreens($media) {
+  @media (min-width: $media/16+em) { @content; }
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -23,7 +31,6 @@ nav a {
   font-weight: bold;
   color: #2c3e50;
 }
-
 nav a.router-link-exact-active {
   color: #42b983;
 }
