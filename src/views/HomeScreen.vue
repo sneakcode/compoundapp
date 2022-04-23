@@ -1,6 +1,7 @@
 <template>
     <main>
         <h1>Compound Interest</h1>
+        <p class="app-decription">Calculate compound interest using a certain capital given x% interest rate per day over a period of time.</p>
         <CompoundInterestForm @compound-interest-form-submitted="calculateCompoundInterest"/>
         <CompoundInterestResult v-if="calculated" :compoundResult="result" @compound-interest-breakdown="startCompoundInterestBreakdown" @close-result="closeCompoundInterestResult" />
         <CompoundInterestBreakdown v-if="displayBreakdown" :compoundBreakdown="breakdown" @close-breakdown="closeCompoundInterestBreakdown" />
@@ -78,8 +79,20 @@
 </script>
 
 <style scoped lang="scss">
+    @import '@/assets/css/_rwd.scss';
+
     main {
-        width: 375px;
         margin: 0 auto;
+
+        h1  { margin-bottom: 0.5rem; }
+        
+        .app-decription {
+            margin-bottom: 1.5rem;
+            color: #8d8c8c;
+        }
+
+        @include forLargeScreens(768) {
+            max-width: 768px;
+        }
     }
 </style>

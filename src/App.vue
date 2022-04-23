@@ -7,12 +7,20 @@
 </template>
 
 <style lang="scss">
+
+@import '@/assets/css/_rwd.scss';
+
 *, ::before, ::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 } 
 
-@mixin forLargeScreens($media) {
-  @media (min-width: $media/16+em) { @content; }
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 #app {
@@ -21,6 +29,12 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+
+  min-width: 320px;
 }
 
 nav {

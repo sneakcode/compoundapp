@@ -41,6 +41,12 @@ export default {
         
         p {
             color: #807A7A;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: .5rem;
+            width: 100%;
         }
     }
 </style>

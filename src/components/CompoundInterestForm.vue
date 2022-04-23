@@ -7,7 +7,7 @@
         </div>
 
         <div class="input">
-            <label for="">Duration</label>
+            <label for="">Period (In Days)</label>
             <input class="text" type="text" v-model.number="duration" />
         </div>
 
@@ -63,6 +63,7 @@ export default {
             width: 100%;
             .text {
                 height: 36px;
+                padding: 5px 10px;
             }
             label, .text {
                 display: block;
@@ -72,6 +73,11 @@ export default {
                 text-align: left;
 
             }
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
         }
     }
 </style>
